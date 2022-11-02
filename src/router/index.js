@@ -2,7 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Beranda, Promo, Pesanan, Chat, Splash} from '../pages';
+import {Beranda, Promo, Pesanan, Chat, Splash, Profil, Search} from '../pages';
 import {BottomNav} from '../components';
 
 const TabNav = createBottomTabNavigator();
@@ -46,6 +46,16 @@ const Router = () => {
       <StackNav.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <StackNav.Screen
+        name="Search"
+        component={Search}
+        options={{headerShown: false}}
+      />
+      <StackNav.Screen
+        name="Profil"
+        component={Profil}
         options={{headerShown: false}}
       />
     </StackNav.Navigator>
