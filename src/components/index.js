@@ -1,3 +1,4 @@
 import BottomNav from './BottomNav';
+import BubbleOpt from './BubbleOpt';
 
-export {BottomNav};
+export {BottomNav, BubbleOpt};

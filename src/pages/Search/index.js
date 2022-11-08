@@ -28,6 +28,7 @@ import {
   COLOR_MAIN,
   COLOR_MAIN_LIGHT,
 } from '../../utils/constant';
+import {BubbleOpt} from '../../components';
 
 const Search = ({navigation}) => {
   const [address, setAddress] = useState({
@@ -126,16 +127,7 @@ const Search = ({navigation}) => {
           </View>
         </View>
         <View style={{marginHorizontal: 16, marginVertical: 4}}>
-          <Text style={styles.textTitle}>Pernah kamu cari</Text>
-          <View style={styles.bubbleContainer}>
-            {recentSearch.map(element => (
-              <TouchableOpacity>
-                <View style={styles.bubbleOption}>
-                  <Text style={styles.bubbleText}>{element}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <BubbleOpt title={'Pernah kamu cari'} listOpt={recentSearch} />
         </View>
         <View style={{marginVertical: 4}}>
           <Text style={[styles.textTitle, {marginHorizontal: 16}]}>
@@ -229,16 +221,7 @@ const Search = ({navigation}) => {
           </ScrollView>
         </View>
         <View style={{marginHorizontal: 16, marginVertical: 4}}>
-          <Text style={styles.textTitle}>Pencarian populer</Text>
-          <View style={styles.bubbleContainer}>
-            {popularSearch.map(element => (
-              <TouchableOpacity>
-                <View style={styles.bubbleOption}>
-                  <Text style={styles.bubbleText}>{element}</Text>
-                </View>
-              </TouchableOpacity>
-            ))}
-          </View>
+          <BubbleOpt title={'Pencarian populer'} listOpt={popularSearch} />
         </View>
       </ScrollView>
     </View>
@@ -266,31 +249,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     borderWidth: 1,
     borderColor: COLOR_BD_GREY,
-  },
-  textTitle: {
-    color: 'black',
-    fontSize: 16,
-    fontWeight: 'bold',
-    marginVertical: 4,
-  },
-  bubbleContainer: {
-    flexDirection: 'row',
-    marginVertical: 4,
-    flexWrap: 'wrap',
-  },
-  bubbleOption: {
-    paddingVertical: 8,
-    paddingHorizontal: 14,
-    marginRight: 14,
-    marginVertical: 6,
-    backgroundColor: COLOR_BG_GREY,
-    borderWidth: 1,
-    borderColor: COLOR_BD_GREY,
-    borderRadius: 18,
-  },
-  bubbleText: {
-    fontSize: 12,
-    color: COLOR_MAIN,
   },
   buttonCategoryContainer: {
     flexDirection: 'row',
@@ -321,7 +279,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
   },
   card: {
-    width: 175,
+    width: 180,
     borderWidth: 1,
     borderColor: COLOR_BD_GREY,
     borderRadius: 14,
